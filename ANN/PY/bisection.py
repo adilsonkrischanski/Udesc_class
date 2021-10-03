@@ -8,7 +8,7 @@ def bisection(f,a,b,n):
     else:
         for i in range(0,n):
             m = 0.5*(a+b)
-            print(f'x_{i} = {m:.16f}')
+            print(f'x_{i+1} = {m:.16f}')
             if f(m)==0:
                 print(f'voce achou uma raiz exata para f:z = {m:.16f}')
             if(f(a)*f(m)<0):
@@ -17,7 +17,7 @@ def bisection(f,a,b,n):
                 a=m
 
 def main():
-    a=0.001
+    a=0.0
     b=2.0
     n=12
     bisection(f,a,b,n)
