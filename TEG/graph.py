@@ -1,12 +1,12 @@
 class graph(): #graph class
     def  __init__(self, nvertices) :
         self.N = nvertices
-        self.grafh = [[0 for column in range(nvertices)]for row in range(nvertices)]
+        self.graph = [[0 for column in range(nvertices)]for row in range(nvertices)]
         self.rotulo = ['0'for column in range(nvertices)]
     
     def complete(self,i,j,w): # insert the value  in position and in transposed position
-        self.grafh[i][j] = w
-        self.grafh[j][i] = w
+        self.graph[i][j] = w
+        self.graph[j][i] = w
 
 
     def renameR(self):
@@ -37,21 +37,21 @@ class graph(): #graph class
             
         
         else:
-            if(self.grafh[primary][second]!=0):
-                return True
+            if(self.graph[primary][second]!=0): 
+                return self.graph[primary][second]
             else:
-                return False
+                return 0
         
     def grd(self, u ): 
          count =0
-         for c in self.grafh[u]:
+         for c in self.graph[u]:
              if c!=0:
                  count+=1
          return count
 
     def edge(self): # check how many edges are in the graph  
         count =0
-        for c in self.grafh:
+        for c in self.graph:
             for aresta in c:
                 if aresta !=0:
                     count+=1
@@ -61,26 +61,51 @@ class graph(): #graph class
         for i in range(self.N):
             for j in range(self.N):
                 if i!=j:
-                    if self.grafh[i][j] ==0:
+                    if self.graph[i][j] ==0:
                         return False
         return True
 
+    def toString(self):
+        
+        print(f'    ',end="")
+        for rot in self.rotulo:
+            print(f' {rot} ',end="")
+        print("")
+        for pos,i in enumerate(self.graph):
+            print(f'{self.rotulo[pos]:<2}  {i}')
+
+def sub(sub,principal):
+        rotulosSub = sub.rotulo 
+        rotulosPrin = principal.rotulo
+        grafoP = principal.graph
+        grafoS = sub.graph
+        verifica = True
+        verifica2 = True
+        
+        for sub in rotulosSub:
+            if not (sub in rotulosPrin):
+                verifica = False
+                break
+        
+        if verifica:
+            for s1 in range(len(rotulosSub)):
+                for s2 in range(s1,len(rotulosSub)):
+                   
+                    p1 = principal.position(rotulosSub[s1])
+                    p2 = principal.position(rotulosSub[s2])
 
 
+                    if not(grafoP[p1][p2] == grafoS[s1][s2]):
+                        verifica2 = False
+                        break
+                        break
 
+            if verifica2:
+                print(f"O grafo {sub} é um sub grafo de {principal}")
+            else:
+                print(f"{sub} Nao é um sub Grafo de {principal}")
 
-n = int(input("qual o numero  de vertices: "))
-grafo = graph(n)
+        else:
+            print("Os Rotulos nao sao correspondentes")
 
-
-grafo.renameR()
-grafo.readWheighrs(grafo)
-
-
-print(grafo.grafh)
-print(grafo.rotulo)
-print(grafo.adjc(grafo,'A','B'))
-print(grafo.grd(grafo.position('A')))
-print(grafo.edge())
-print(grafo.graph_is_complete())
 
