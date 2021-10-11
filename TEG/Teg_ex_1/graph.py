@@ -3,7 +3,10 @@ class graph(): #graph class
         self.N = nvertices
         self.graph = [[0 for column in range(nvertices)]for row in range(nvertices)]
         self.rotulo = ['0'for column in range(nvertices)]
-    
+        
+
+ 
+
     def complete(self,i,j,w): # insert the value  in position and in transposed position
         self.graph[i][j] = w
         self.graph[j][i] = w
@@ -28,17 +31,17 @@ class graph(): #graph class
     
     def adjc(self,g,a,b): #adjacence check 
   
-        primary = g.position(a) 
+        first = g.position(a) 
         second = g.position(b) 
         
 
-        if(primary ==-1) or (second ==-1):
+        if(first ==-1) or (second ==-1):
             return "Invervalo Invalido"
             
         
         else:
-            if(self.graph[primary][second]!=0): 
-                return self.graph[primary][second]
+            if(self.graph[first][second]!=0): 
+                return self.graph[first][second]
             else:
                 return 0
         
@@ -72,7 +75,7 @@ class graph(): #graph class
             print(f' {rot} ',end="")
         print("")
         for pos,i in enumerate(self.graph):
-            print(f'{self.rotulo[pos]:<2}  {i}')
+            print(f'{self.rotulo[pos]:<3}  {i}')
 
 def sub(sub,principal):
         rotulosSub = sub.rotulo 

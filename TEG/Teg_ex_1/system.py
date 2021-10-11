@@ -1,4 +1,4 @@
-from graph import graph
+from graph import *
 
 class system:
     def __init__(self):
