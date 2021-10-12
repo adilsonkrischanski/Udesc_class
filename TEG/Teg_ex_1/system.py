@@ -1,3 +1,4 @@
+# code disponivel em git@github.com:adilsonkrischanski/Udesc_class.git
 from graph import *
 
 class system:

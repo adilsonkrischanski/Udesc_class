@@ -1,3 +1,4 @@
+# code disponivel em git@github.com:adilsonkrischanski/Udesc_class.git
 from system import system
 from system import menu
 

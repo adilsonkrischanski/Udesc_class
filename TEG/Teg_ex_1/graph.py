@@ -1,3 +1,4 @@
+# code disponivel em git@github.com:adilsonkrischanski/Udesc_class.git
 class graph(): #graph class
     def  __init__(self, nvertices) :
         self.N = nvertices

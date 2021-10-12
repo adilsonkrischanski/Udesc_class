@@ -1,3 +1,4 @@
+# code disponivel em git@github.com:adilsonkrischanski/Udesc_class.git
 from Vertex import Vertex
 
 class Graph(): # class graph
@@ -63,7 +64,7 @@ class Graph(): # class graph
 
         for i in self.vert_dict:
             if i==a:
-                return(i.grau())
+                return(i.grd_vertex())
                 
         return 0
 

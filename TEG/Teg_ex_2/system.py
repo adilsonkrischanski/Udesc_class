@@ -1,3 +1,4 @@
+# code disponivel em git@github.com:adilsonkrischanski/Udesc_class.git
 from Graph import Graph
 class system:
 
@@ -29,8 +30,8 @@ class system:
         sub = self.grafos[subid]
         principal = self.grafos[principalid]
         verifica = True
-        for x in sub.vert_dict.keys():
-            if x in principal.vert_dict.keys():
+        for x in sub.get_vertices():
+            if x in principal.get_vertices():
                 verifica = verifica and True
             else:
                 verifica = verifica and False

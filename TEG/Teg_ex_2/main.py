@@ -1,3 +1,4 @@
+# code disponivel em git@github.com:adilsonkrischanski/Udesc_class.git
 from system import system
 from system import menu
 
@@ -31,7 +32,7 @@ while True:
         print("Insira o id do grafo que deseja analizar:")
         id = int(input())
         print("os rotulos presentes nesse grafo são:")
-        print(s.grafos[id].self.vert_dict.keys())
+        print(s.grafos[id].get_vertices())
         print("Escolha o rotulo para verificar verificar o grau [cuidado com o CAPS LOCK]")
         grau = input()
         g = s.grafos[id].grd(grau)
@@ -46,7 +47,7 @@ while True:
     elif op==5:
         print("Insira o id do grafo que deseja analizar:")
         id = int(input())
-        c = s.grafos[id].graph_is_complete()
+        c = s.grafos[id].complete()
         if c:
             print("O grafo é completo")
         else:
