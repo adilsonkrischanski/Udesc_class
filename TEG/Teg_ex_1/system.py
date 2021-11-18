@@ -56,6 +56,9 @@ class system:
             grafo.toString()
             print("")
 
+    def alcanca(self,id, vertice):
+        
+
 
 
 

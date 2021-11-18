@@ -1,5 +1,7 @@
+import math
 def f(x):
-    return x*x*x-2 #funcao
+    M_PI = 3.141592
+    return 1000*(((4/3) * (M_PI*8.28*8.28*8.28))-( ((M_PI*x*x)/3) * (3*8.28-x))) - 241.72*(4/3) * (M_PI*8.28*8.28*8.28) #funcao
 
 def bisection(f,a,b,n):
     if f(a)*f(b)>=0:
@@ -18,7 +20,7 @@ def bisection(f,a,b,n):
 
 def main():
     a=0.0
-    b=2.0
+    b=16.5
     n=12
     bisection(f,a,b,n)
 

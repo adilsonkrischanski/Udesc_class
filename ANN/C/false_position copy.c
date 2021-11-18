@@ -35,7 +35,7 @@ void fpos(double (*f) (double),double a, double b, int n ){
 
 
 double f(double x){
-    return x*x-2; //function
+    return x*x -4*x +2 -log; //function
 }
 
 int main(void){

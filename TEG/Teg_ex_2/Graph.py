@@ -63,7 +63,7 @@ class Graph(): # class graph
     def grd(self,a): # 'a'  is a label
 
         for i in self.vert_dict:
-            if i==a:
+            if i.id == a:
                 return(i.grd_vertex())
                 
         return 0
